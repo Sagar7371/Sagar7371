@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduFlow Pro | ERP & LMS</title>
+    <link rel="stylesheet" href="erp.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="menu-btn" id="menu-btn">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">Edu<span>Flow</span></div>
+            </div>
+            
+            <nav class="nav-menu">
+                <div class="nav-label">Main Menu</div>
+                <ul>
+                    <li class="nav-item active" onclick="switchSection('dashboard-section', this)">
+                        <span class="icon">📊</span> Dashboard
+                    </li>
+                    <li class="nav-item" onclick="switchSection('courses-section', this)">
+                        <span class="icon">📚</span> My Courses
+                    </li>
+                    <li class="nav-item" onclick="switchSection('assignment-section', this)">
+                        <span class="icon">📝</span> Assignments
+                    </li>
+                    <li class="nav-item" onclick="switchSection('reports-section', this)">
+                        <span class="icon">📈</span> Reports
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="user-card">
+                <div class="avatar">S</div>
+                <div class="user-info">
+                    <p class="u-name">Suman Sagar</p>
+                    <p class="u-status">Online</p>
+                </div>
+                <button class="logout-mini" onclick="location.reload()">➜</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="glass-header">
+                <div class="header-left">
+                    <h1 id="dynamic-title">Dashboard</h1>
+                    <p id="sub-title">Welcome back, <strong>Suman Sagar</strong>! Let's complete your 3 courses.</p>
+                </div>
+                <div class="header-right">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    <div class="notif-icon">🔔<span class="dot"></span></div>
+                </div>
+            </header>
+
+            <div id="dashboard-section" class="content-view active-view">
+                <div class="stats-row">
+                    <div class="stat-card border-left-blue">
+                        <p>Enrollment</p>
+                        <h3>3 / 3 <small style="font-size: 1rem; color: #64748b;">Courses</small></h3>
+                    </div>
+                    <div class="stat-card">
+                        <p>Attendance</p>
+                        <h3 style="color: #10b981;">92%</h3>
+                    </div>
+                    <div class="stat-card">
+                        <p>Tasks Due</p>
+                        <h3 style="color: #f59e0b;">04</h3>
+                    </div>
+                </div>
+
+                <h2 class="section-title" style="margin-bottom: 1.5rem;">Recommended for You</h2>
+                <div class="glass-card" style="background: linear-gradient(135deg, #6366f1, #818cf8); padding: 2.5rem; border-radius: 28px; color: white; box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.3);">
+                    <h2 style="margin-bottom: 10px;">Keep it up, Suman! 🚀</h2>
+                    <p style="opacity: 0.9; font-size: 1.1rem; line-height: 1.6;">You've completed 65% of your Data Structures course. You're in the top 5% of your class this week. Finish your pending assignment to maintain your streak!</p>
+                    <button class="btn-action" style="width: auto; margin-top: 20px; background: white; color: #6366f1; padding: 12px 30px; border-radius: 12px; font-weight: 700; border: none; cursor: pointer;">Resume Learning</button>
+                </div>
+            </div> <div id="courses-section" class="content-view" style="display:none;">
+                <h2 class="section-title">My Learning Path</h2>
+                
+                <div class="course-group">
+                    <h3 class="group-label" style="margin: 20px 0; color: #15803d;">✅ Enrolled Courses (3)</h3>
+                    <div class="course-grid">
+                        <div class="course-card selected">
+                            <div class="card-tag">Enrolled</div>
+                            <h3>CS101: Data Structures</h3>
+                            <p>Dr. Rajeen Ranjan patel • 12 Weeks</p>
+                            <div class="progress-bar"><div class="fill" style="width: 65%;"></div></div>
+                            <button class="btn-action">Continue Learning</button>
+                        </div>
+                        <div class="course-card selected">
+                            <div class="card-tag">Enrolled</div>
+                            <h3>MTH202: Deep Learning </h3>
+                            <p>Himanshu Verma • 10 Weeks</p>
+                            <div class="progress-bar"><div class="fill" style="width: 30%;"></div></div>
+                            <button class="btn-action">Continue Learning</button>
+                        </div>
+                        <div class="course-card selected">
+                            <div class="card-tag">Enrolled</div>
+                            <h3>PHY101: CyberSecurity</h3>
+                            <p>Mrs. Mrinalinee Singh • 14 Weeks</p>
+                            <div class="progress-bar"><div class="fill" style="width: 10%;"></div></div>
+                            <button class="btn-action">Continue Learning</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-group" style="margin-top: 40px;">
+                    <h3 class="group-label" style="margin: 20px 0; color: #64748b;">⏳ Pending Selection (2)</h3>
+                    <div class="course-grid">
+                        <div class="course-card pending" style="border: 1px dashed #cbd5e1; opacity: 0.7;">
+                            <h3>ENG301: Modern Poetry</h3>
+                            <p>Prof. Rajesh Singh • 8 Weeks</p>
+                            <div class="progress-bar"><div class="fill" style="width: 0%;"></div></div>
+                            <button class="btn-action secondary">Select to Enroll</button>
+                        </div>
+                        <div class="course-card pending" style="border: 1px dashed #cbd5e1; opacity: 0.7;">
+                            <h3>BIO105: Machine Learning</h3>
+                            <p>Dr. Sushant Kumar • 11 Weeks</p>
+                            <div class="progress-bar"><div class="fill" style="width: 0%;"></div></div>
+                            <button class="btn-action secondary">Select to Enroll</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="assignment-section" class="content-view" style="display:none;">
+                <div class="header-flex" style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 20px;">
+                    <h2 class="section-title">Course Assignments</h2>
+                    <span class="badge" style="background: #fee2e2; color: #b91c1c; padding: 5px 12px; border-radius: 20px; font-weight: bold;">3 Pending</span>
+                </div>
+                <div class="assignment-list">
+                    <div class="assignment-card glass-card" style="background: white; padding: 20px; border-radius: 15px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #e2e8f0;">
+                        <div class="assign-info" style="display: flex; align-items: center; gap: 15px;">
+                            <div class="assign-icon" style="font-size: 2rem;">📄</div>
+                            <div>
+                                <h4>Data Structures - Binary Trees</h4>
+                                <p>Deadline: 05 Feb 2026 | Max Marks: 50</p>
+                            </div>
+                        </div>
+                        <div class="assign-actions">
+                            <input type="file" id="file-ds" hidden>
+                            <label for="file-ds" class="btn-export" style="cursor: pointer; padding: 8px 15px; border: 1px solid #ddd; border-radius: 8px;">Choose File</label>
+                            <button class="btn-action secondary" style="width: auto; padding: 8px 20px; margin-left: 10px;" onclick="alert('Assignment Submitted!')">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="reports-section" class="content-view" style="display:none;">
+                <div class="header-flex" style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 20px;">
+                    <h2 class="section-title">Institutional Reports</h2>
+                    <button class="btn-export" onclick="window.print()" style="padding: 10px 20px; cursor: pointer; border-radius: 10px; border: 1px solid #ddd; background: white;">📥 Download PDF</button>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-card border-left-blue">
+                        <p>Total Teachers</p>
+                        <h3>12</h3>
+                    </div>
+                    <div class="stat-card" style="border-left: 5px solid #22c55e; background: white; padding: 1.5rem; border-radius: 15px;">
+                        <p>Avg. Student Grade</p>
+                        <h3>B+ (84%)</h3>
+                    </div>
+                </div>
+                <div class="table-container" style="background: white; border-radius: 15px; overflow: hidden; border: 1px solid #e2e8f0; margin-top: 20px;">
+                    <table class="modern-table" style="width: 100%; border-collapse: collapse; text-align: left;">
+                        <thead style="background: #f8fafc;">
+                            <tr>
+                                <th style="padding: 15px;">Teacher Name</th>
+                                <th style="padding: 15px;">Assigned Courses</th>
+                                <th style="padding: 15px;">Total Students</th>
+                                <th style="padding: 15px;">Workload Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-top: 1px solid #f1f5f9;">
+                                <td style="padding: 15px;"><strong>Himanshu Verma</strong></td>
+                                <td style="padding: 15px;">CS101, CS202, CS501</td>
+                                <td style="padding: 15px;">145</td>
+                                <td style="padding: 15px;"><span style="color:red; font-weight:bold;">High</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="erp.js"></script>
+</body>
+</html>
